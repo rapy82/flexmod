@@ -1,0 +1,5 @@
+<h1>Frequency Configuration</h1>
+Response:<br/> 
+<%= @response %>
+
+<%= link_to 'Frequency', controller:'fm_configuration' %>

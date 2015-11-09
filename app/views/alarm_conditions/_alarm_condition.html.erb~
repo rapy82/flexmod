@@ -1,0 +1,13 @@
+<p>
+  <strong>Comman:</strong>
+  <%= comment.command %>
+</p>
+ 
+<p>
+  <strong>Comparator:</strong>
+  <%= comment.comparator %>
+</p>
+<p>
+  <strong>Value:</strong>
+  <%= comment.value %>
+</p>

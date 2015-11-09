@@ -1,0 +1,25 @@
+<h1>Send Command</h1>
+
+
+<%= form_tag("/send_command", method: "post") do %>
+  <%= label_tag(:command, "Command:") %>
+  <%= text_field_tag(:command) %>
+  <%= label_tag(:parameter, "Parameter:") %>
+  <%= text_field_tag(:parameter) %>
+  <%= label_tag(:parameter2, "Parameter2:") %>
+  <%= text_field_tag(:parameter2) %>
+  <%= submit_tag("Send") %>
+<% end %>
+
+<br/>
+
+<% if !@response.nil? -%>
+	Response:<br/>
+
+	<ul>
+	<% @response.each do |line| %>
+		<li> <%= line %></li>
+		<% end %>
+	</ul>	
+<% end %>
+

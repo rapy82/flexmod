@@ -1,0 +1,49 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Mode Configuration
+  </div>
+  <div class="panel-body">
+    <div class='row'>
+      <div class='col-md-6'>
+        <%= form_for :mode_configuration, url: {action: "save"}, html: {class:'form'} do |f| %>
+          <div class='form-group'>
+            <%= f.label :mode %><br>
+            <%= f.select :mode , [	['MPX & RDS','0'],['MPX','1'],['L & RDS','2'],['R & RDS','3'],['L+R & RDS','4'],['Left','5'],['Right','6'],['L+R','7'],['full band','8'],['BBND+IRDS','9'],['BBND+RDS','10'],['BBND+SCA','11'],['RDS notch','12'],['RDS local','13']], { :include_blank=>false } , {:class=>'form-control'}  %>
+          </div>
+         	
+         	<div class='form-group'>
+            <%= f.label :source %>
+           <%= f.select :source , [['SPDIF/AES-EBU (Optical)','0'], ['SPDIF/AES-EBU (Electrical)','1'], ['SPDIF/AES-EBU (on ASI input)','2'], ['SPDIF/AES-EBU (on SDI input)','3'], ['Analog XLR (I2S)','4'], ['BaseBand','5']], { :include_blank=>false } , {:class=>'form-control'}  %>
+          </div>
+
+          <div class='form-group'>
+            <%= f.label :ext_mpx_gain %>
+            <div class='input-group'>
+              <%= f.text_field :ext_mpx_gain,{:class=>'form-control'} %>
+              <span class="input-group-addon">W</span>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <%= f.label :ext_sca_gain %>
+            <div class='input-group'>
+              <%= f.text_field :ext_sca_gain,{:class=>'form-control'} %>
+              <span class="input-group-addon">W</span>
+            </div>
+          </div>
+
+         
+          <div class='form-group'>
+            <%= f.label :pre_enphasis %><br>
+            <%= f.select :pre_enphasis , [['0 uS','0'], ['50 uS','50'],['75 uS','75']], { :include_blank=>false } , {:class=>'form-control'}  %>
+          </div>
+          
+          <div class='form-group'>
+            <%= f.submit :class=>'btn btn-primary'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

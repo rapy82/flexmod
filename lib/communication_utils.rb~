@@ -1,0 +1,6 @@
+class Comm
+	def selfgetSerial
+		sp = SerialPort.new "/dev/ttyUSB0",115200
+		return sp
+	end
+end

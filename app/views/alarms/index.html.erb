@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">List Alarms</div>
+  <div class="panel-body">
+    <% @alarms.each do |alarm| %>
+        
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <% if !alarm.enabled %>
+          <div class="panel panel-warning">
+          <% elsif alarm.suspended %>
+          <div class="panel panel-danger">
+          <% else %>
+          <div class="panel panel-success">
+          <% end %>
+            <div class="panel-heading"><%= alarm.name %></div>
+            <div class="panel-body">
+              <div class="col-sm-10 col-md-10">
+                 <div class="row">
+                    Message: <%= alarm.message %>
+                 </div>
+                 <% alarm.alarm_conditions.each do |alarm_codition| -%>
+                   <div class="row">
+                      <%= alarm_codition.command %> <%= alarm_codition.comparator %>:  <%= alarm_codition.value %>
+                   </div>
+                 <% end -%>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Edit', edit_alarm_path(alarm)  , :class => 'btn btn-default', :method => :get %>
+                <%= link_to 'Delete', alarm, method: :destroy, data: { confirm: 'Are you sure?' }  , :class => 'btn btn-danger', :method => :delete %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  <%= link_to 'New Alarm', new_alarm_path %>
+</div>

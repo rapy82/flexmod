@@ -1,0 +1,30 @@
+<%= form_tag "/settings/save_password", method: {action: "save"}, html: {class:'form'} do |f| %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Configurations
+    </div>
+    <div class="panel-body">
+      <div class='row'>
+        <div class='col-md-6'>
+            <div class='form-group'>
+                <%= label_tag 'Configuration 1' %>
+                <%= text_field_tag :configuration1 , 'Value', {:class=>'form-control'}%>
+            </div>
+            <div class='form-group'>
+                <%= label_tag 'Configuration 2' %>
+                <%= text_field_tag :configuration2 , 'Value', {:class=>'form-control'}%>
+            </div>
+            <div class='form-group'>
+                <%= label_tag 'Configuration 3' %>
+                <%= text_field_tag :configuration3 , 'Value', {:class=>'form-control'}%>
+            </div>
+           	
+            <div class='form-group'>
+              <%= submit_tag "Save", :class=>'btn btn-primary'%>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+                   

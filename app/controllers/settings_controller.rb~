@@ -1,0 +1,64 @@
+class SettingsController < ApplicationController
+
+  require 'socket'  
+  
+  def index
+  end
+
+  def change_password
+    admin_password_key = ConfigurationKey.find_by! key: 'admin', section: 'password'
+    @old_password = admin_password_key.value
+  end
+
+  def save_password
+    old_password_param = params[:old_password]
+    new_password_param = params[:new_password]
+    confirm_password_param = params[:confirm_password]
+    admin_password_key = ConfigurationKey.find_by! key: 'admin', section: 'password'
+    old_password = admin_password_key.value
+    if old_password_param == old_password and new_password_param == confirm_password_param
+      admin_password_key.value = new_password_param
+      admin_password_key.save
+    end
+    flash[:notice] = "New password has been saved"
+    redirect_to action: :index
+  end
+
+  def network_settings
+    @ip_address = Socket.ip_address_list[1].ip_address
+    @ip_address = local_ip
+  end
+
+  def configuration_settings
+  end
+
+  def flexmod_reboot
+    Flexgem::System.reboot
+    flash[:notice] = "Reboot of flexmod has been completed"
+    redirect_to action: :index
+  end
+
+  def flexmod_reset
+    Flexgem::System.clear
+    flash[:notice] = "Flexmod has been resetted to saved values"
+    redirect_to action: :index
+  end
+
+  def flexmod_save
+    Flexgem::System.save
+    flash[:notice] = "Configurations saved to flexmod module"
+    redirect_to action: :index
+  end
+  
+  def local_ip
+    orig, Socket.do_not_reverse_lookup = Socket.do_not_reverse_lookup, true  # turn off reverse DNS resolution temporarily
+   
+    UDPSocket.open do |s|
+      s.connect '64.233.187.99', 1
+      s.addr.last
+    end
+  ensure
+    Socket.do_not_reverse_lookup = orig
+  end
+
+end

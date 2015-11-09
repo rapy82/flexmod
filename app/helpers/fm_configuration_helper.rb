@@ -1,0 +1,2 @@
+module FmConfigurationHelper
+end

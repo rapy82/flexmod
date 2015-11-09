@@ -1,0 +1,12 @@
+module ModeConfigurationHelper
+
+  def get_current_mode
+    current_mode = ConfigurationKey.find_by key:'current_mode', section:'mode_configuration'
+    current_mode.value
+  end
+
+  def set_current_mode(mode_id)
+    current_mode = ConfigurationKey.find_by key:'current_mode', section:'mode_configuration'
+    current_mode.value = mode_id
+  end
+end

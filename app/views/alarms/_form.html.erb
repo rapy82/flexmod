@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-8 col-sd-12">
+		<%= form_for @alarm, html: {class:'form'} do |f| %>
+			<% if @alarm.errors.any? %>
+				<div id='error_explanation'>
+				  <h2><%= pluralize(@alarm.errors.count, 'error') %> prohibited this alarm from being saved:</h2>
+
+				  <ul>
+				  <% @alarm.errors.full_messages.each do |msg| %>
+				    <li><%= msg %></li>
+				  <% end %>
+				  </ul>
+				</div>
+			<% end %>
+			<div class='form-group'>
+				<%= f.label :name, :class=>'form-label' %><%= f.text_field :name , :class=>'form-control' %>
+			</div>
+			<div class='form-group'>
+				<%= f.label :message, :class=>'form-label' %><%= f.text_area :message  , :class=>'form-control'%>
+			</div>
+			<div class='form-group'>
+				<%= f.label :mails, :class=>'form-label' %><%= f.text_area :mails , :class=>'form-control' %>
+			</div>
+			<div class='form-group'>
+				<%= f.label :suspended, :class=>'form-label' %><%= f.check_box :suspended  , :class=>'checkbox'%>
+			</div>
+			<div class='form-group'>
+				<%= f.label :enabled, :class=>'form-label' %><%= f.check_box :enabled , :class=>'checkbox' %>
+			</div>
+				<%= f.fields_for :alarm_conditions do |c| %>
+    			
+    			<div class='form-inline'>
+							<div class='form-group'>
+								<%= c.label :command %>
+								<%= c.select :command , Flexgem::Comm.get_config.collect {|command|[command['readable_name']]} , { :include_blank=>false } , {:class=>'form-control'} %>
+							</div>
+							<div class='form-group'>
+								<%= c.label :comparator %>
+								<%= c.select :comparator , [['=','EQUALS'], ['<','LT'],['>','GT'],['More than value %','GT%'],['Less than value %','LT%']], { :include_blank=>false } , {:class=>'form-control'} %>
+							</div>
+							<div class='form-group'>
+								<%= c.label :value %>
+								<%= c.text_field :value , :class=>'form-control', :type=>'number' %>
+							</div>
+							<div class='form-group'>
+								<%= c.label 'Elimina' %>
+								<%= c.check_box :_destroy, :class=>'checkbox' %>
+							</div>
+			    </div>
+				<% end %>
+				<br/><br/>
+			<div class='form-group'>
+			<% if !@alarm.id.nil? %>
+				<%= link_to 'Add Alarm Condition', new_alarm_alarm_condition_path(@alarm) , :class => 'btn btn-default', :method => :get %>
+			<% end %>
+			<%= f.submit  :class => 'btn btn-primary' %>
+			</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+

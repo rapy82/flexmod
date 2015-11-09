@@ -1,0 +1,33 @@
+<h1>Listing configuration_keys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+      <th>Description</th>
+      <th>Section</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @configuration_keys.each do |configuration_key| %>
+      <tr>
+        <td><%= configuration_key.key %></td>
+        <td><%= configuration_key.value %></td>
+        <td><%= configuration_key.description %></td>
+        <td><%= configuration_key.section %></td>
+        <td><%= link_to 'Show', configuration_key %></td>
+        <td><%= link_to 'Edit', edit_configuration_key_path(configuration_key) %></td>
+        <td><%= link_to 'Destroy', configuration_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Configuration key', new_configuration_key_path %>

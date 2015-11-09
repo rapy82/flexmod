@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Alert</h1>
+    <p>
+      An alarm was launched from flexmod platform
+    </p>
+    <p>
+      <%= @message %>
+    </p>
+  </body>
+</html>

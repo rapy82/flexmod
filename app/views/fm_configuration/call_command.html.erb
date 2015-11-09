@@ -1,0 +1,9 @@
+<h1>Frequency Configuration</h1>
+Response:<br/>
+
+<ul>
+<% @response.each do |line| %>
+  <li> <%= line %></li>
+  <% end %>
+</ul>
+<%= link_to 'Frequency', controller:'fm_configuration' %>

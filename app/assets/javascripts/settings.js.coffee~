@@ -1,0 +1,23 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $("#form").validate rules:
+    name:
+      minlength: 2
+      required: true
+
+    city:
+      minlength: 2
+      required: true
+
+    state:
+      minlength: 2
+      required: true
+
+    email:
+      required: true
+      email: true
+
+  return
+

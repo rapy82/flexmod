@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @configuration_key.key %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @configuration_key.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @configuration_key.description %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @configuration_key.section %>
+</p>
+
+<%= link_to 'Edit', edit_configuration_key_path(@configuration_key) %> |
+<%= link_to 'Back', configuration_keys_path %>

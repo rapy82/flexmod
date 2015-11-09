@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Frequency Configuration</div>
+  <div class="panel-body">
+    <div class='row'>
+      <div class='col-md-6'>
+        <%= form_for :fm_configuration, url: {:action => "save"}, html: {class:'form'} do |f| %>
+          <div class='form-group'>
+            <%= f.label :fm_frequency %><br>
+            <div class='input-group'>
+              <%= f.text_field :fm_frequency ,{:class=>'form-control'}%>
+              <span class="input-group-addon">Hz</span>
+            </div>
+          </div>
+         	
+         	 <div class='form-group'>
+            <%= f.label :fm_rfpower %>
+            <div class='input-group'>
+              <%= f.text_field :fm_rfpower,{:class=>'form-control'} %>
+              <span class="input-group-addon">W</span>
+            </div>
+          </div>
+          <div class='form-group'>
+            <%= f.submit :class=>'btn btn-primary',:confirm=>'Are you sure to save those values? If you proceed the power system will be restarted'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

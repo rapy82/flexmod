@@ -1,0 +1,2 @@
+<h1>FmConfiguration#read_fm_frequency</h1>
+<p><%= @fm_frequency %></p>

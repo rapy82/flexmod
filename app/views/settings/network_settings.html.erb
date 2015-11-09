@@ -1,0 +1,20 @@
+<%= form_tag "/settings/save_network_configuration", method: {action: "save"}, id:'network-configuration', html: {class:'form'} do |f| %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Configurations
+    </div>
+    <div class="panel-body">
+      <div class='row'>
+        <div class='col-md-6'>
+            <div class='form-group'>
+                <%= label_tag 'Ip Address' %>
+                <%= label_tag :ip_address, @ip_address, maxlength: 15, class: "form-control" %>
+            </div>
+            <div class='form-group'>
+              <%= link_to 'Back', '/settings'  , :class => 'btn btn-default', :method => :get %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

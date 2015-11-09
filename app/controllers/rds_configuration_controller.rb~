@@ -1,0 +1,15 @@
+class RdsConfigurationController < ApplicationController
+  
+  def index
+		@rds_configuration = RdsConfiguration.new
+		@rds_configuration.load()
+	end
+	
+	def save
+			@rds_configuration = RdsConfiguration.new params[:rds_configuration]
+			@rds_configuration.save
+			flash[:notice] = "Rds configuration has been saved"
+			redirect_to  "/rds_configuration"
+	end
+	
+end

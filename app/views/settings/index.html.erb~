@@ -1,0 +1,81 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Settings
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">Manage Password</div>
+            <div class="panel-body">
+              <div class="col-sm-10 col-md-10">
+                 <div class="row">
+                    Modify password page
+                 </div>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Edit', 'settings/change_password'  , :class => 'btn btn-default', :method => :get %>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">Network Settings</div>
+            <div class="panel-body">
+              <div class="col-sm-10 col-md-10">
+                 <div class="row">
+                    Modify network settings
+                 </div>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Edit', 'settings/network_settings'  , :class => 'btn btn-default', :method => :get %>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">Manage Configurations</div>
+            <div class="panel-body">
+              <div class="col-sm-10 col-md-10">
+                 <div class="row">
+                    Modify Configurations
+                 </div>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Edit', 'settings/configuration_settings'  , :class => 'btn btn-default', :method => :get %>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">Flexmod Commands</div>
+            <div class="panel-body">
+              <div class="col-sm-6 col-md-6">
+                 <div class="row">
+                    Send Commands to Flexmod module
+                 </div>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Reboot', 'settings/flexmod_reboot'  , :class => 'btn btn-default', :method => :get,:confirm=>'Are you sure to reebot system? All unsaved configurations will be lost' %>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Reset', 'settings/flexmod_reset'  , :class => 'btn btn-default', :method => :get,:confirm=>'Are you sure to reset system to firmware settings? ALL configurations will be lost' %>
+              </div>
+              <div class="col-sm-2 col-md-2">
+                <%= link_to 'Save', 'settings/flexmod_save'  , :class => 'btn btn-default', :method => :get,:confirm=>'Are you sure to save current configurations?' %>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>

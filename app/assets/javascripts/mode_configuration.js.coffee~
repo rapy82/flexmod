@@ -1,0 +1,23 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+update_selected_mode_image = ->
+  selected = undefined
+  selected_image = undefined
+  selected = $("#mode_configuration_mode_configuration").val()
+  selected_image = "/assets/mode_images/mode_" + selected + ".jpg"
+  $("#selected-mode-image").attr "src", selected_image
+  return
+
+
+ready = ->
+  update_selected_mode_image()
+  $("#mode_configuration_mode_configuration").change ->
+    update_selected_mode_image()
+    return
+  return
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
+
+

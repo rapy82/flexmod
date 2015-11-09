@@ -1,0 +1,17 @@
+<%= form_for([@alarm, @alarm.alarm_conditions.build]) do |c| %>
+  <p>
+    <%= c.label :command %><br />
+    <%= c.text_field :command %>
+  </p>
+   <p>
+    <%= c.label :comparator %><br />
+    <%= c.text_field :comparator %>
+  </p>
+  <p>
+    <%= c.label :value %><br />
+    <%= c.text_field :value %>
+  </p>
+  <p>
+    <%= c.submit %>
+  </p>
+<% end %>

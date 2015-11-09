@@ -1,0 +1,76 @@
+<%= form_tag("/power_level/save", :method => "post") do %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Power
+  </div>
+  <div class="panel-body">
+    <div class='row'>
+      <div class='col-md-2'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Normal Power Level
+          </div>
+          <div class="panel-body">
+              <%= @high_level_power %> W
+          </div>
+        </div>
+      </div>
+      <div class='col-md-2'>
+        <div class="panel panel-default">
+          <div class="panel-heading">From</div>
+          <div class="panel-body">
+            <div class='form-inline'>
+              <div class='form-group'>
+                <%= select_hour @from_hour , {:field_name => 'from_hour'}, {:class=>'form-control'} %>
+              </div>
+              <div class='form-group'>
+                <%= select_minute @from_minute , {:field_name => 'from_minute'}, {:class=>'form-control'} %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-2'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            To
+          </div>
+          <div class="panel-body">
+            <div class='form-inline'>
+              <div class='form-group'>
+                <%= select_hour @to_hour ,{:field_name => 'to_hour'}, {:class=>'form-control'} %>
+              </div>
+              <div class='form-group'>
+                <%= select_minute @to_minute ,{:field_name => 'to_minute'},  {:class=>'form-control'} %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class='col-md-3'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Power set to:
+          </div>
+          <div class="panel-body">
+            <div class='form-group'>
+            <div class='input-group'>
+              <%= text_field_tag :power_percent,  @power_percent,{:class=>'form-control'} %>
+              <span class="input-group-addon">%</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+     <div class='row'>
+       <div class='col-md-3'>
+          <%= submit_tag "Save" ,:class=>'btn btn-primary' %>
+       </div>
+     </div>
+  </div>
+</div>
+<% end %>
+                   

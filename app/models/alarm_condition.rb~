@@ -1,0 +1,4 @@
+class AlarmCondition < ActiveRecord::Base
+	attr_accessor :command, :comparator, :value
+  belongs_to :alarm
+end

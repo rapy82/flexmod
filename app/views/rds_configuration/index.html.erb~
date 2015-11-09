@@ -1,0 +1,74 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Rds Configuration</div>
+  <div class="panel-body">
+    <div class='row'>
+      <div class='col-md-6'>
+        <%= form_for :rds_configuration, url: {action: "save"}, html: {class:'form'} do |f| %>
+          <div class='form-group'>
+            <%= f.label :rds_name %><br>
+            <%= f.text_field :rds_name ,{:class=>'form-control'}%>
+          </div>
+         	
+         	 <div class='form-group'>
+            <%= f.label 'Program ID' %><br>
+            <%= f.text_field :rds_prog_id ,{:class=>'form-control'}%>
+          </div>
+         	
+         	<div class='form-group'>
+            <%= f.label :rds_text %><br>
+            <%= f.text_area :rds_text ,{:class=>'form-control'}%>
+          </div>
+          
+          <div class='form-group'>
+            <%= f.label :rds_alt_freqs %><br>
+            <%= f.text_area :rds_alt_freqs ,{:class=>'form-control'}%>
+            <button class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+              Alt.Frequencies
+            </button>
+          </div>
+          <div class='form-group'>
+            <%= f.label :rds_tr_alert %><br>
+            <%= f.check_box :rds_tr_alert , :class=>'checkbox'%>
+          </div>
+          <div class='form-group'>
+            <%= f.label :rds_tr_program %><br>
+            <%= f.check_box :rds_tr_program , :class=>'checkbox'%>
+          </div>
+          <div class='form-group'>
+            <%= f.label :rds_music_speech %><br>
+            <%= f.select :rds_music_speech , [['Music','0'], ['Speech','1']], { :include_blank=>false } , {:class=>'form-control'}  %>
+          </div>
+         
+          <div class='form-group'>
+            <%= f.label :rds_prog_type %><br>
+            <%= f.select :rds_prog_type ,[['RDS (UE)  Indefinito  - RDBS  (USA)  Indefinito','0'],['RDS (UE)  News  - RDBS  (USA)  News','1'],['RDS (UE)  Attualità  - RDBS  (USA)  Informazione','2'],['RDS (UE)  Informazione  - RDBS  (USA)  Sport','3'],['RDS (UE)  Sport  - RDBS  (USA)  Talk show','4'],['RDS (UE)  Educazione  - RDBS  (USA)  Rock','5'],['RDS (UE)  Teatro  - RDBS  (USA)  Rock classico','6'],['RDS (UE)  Cultura  - RDBS  (USA)  Adult hits','7'],['RDS (UE)  Scienza  - RDBS  (USA)  Soft rock','8'],['RDS (UE)  Varie  - RDBS  (USA)  Top 40','9'],['RDS (UE)  Pop  - RDBS  (USA)  Country','10'],['RDS (UE)  Rock  - RDBS  (USA)  Oldies','11'],['RDS (UE)  Easy listening  - RDBS  (USA)  Soft','12'],['RDS (UE)  Light classical  - RDBS  (USA)  Nostalgia','13'],['RDS (UE)  Serious classical  - RDBS  (USA)  Jazz','14'],['RDS (UE)  Altri generi  - RDBS  (USA)  Classica','15'],['RDS (UE)  Meteo  - RDBS  (USA)  R&B','16'],['RDS (UE)  Finanza  - RDBS  (USA)  Soft R&B','17'],['RDS (UE)  Bambini  - RDBS  (USA)  Lingua','18'],['RDS (UE)  Affari sociali  - RDBS  (USA)  Musica religiosa','19'],['RDS (UE)  Religione  - RDBS  (USA)  Show religioso','20'],['RDS (UE)  Telefonate  - RDBS  (USA)  Personality','21'],['RDS (UE)  Viaggi  - RDBS  (USA)  Public','22'],['RDS (UE)  Tempo libero  - RDBS  (USA)  College','23'],['RDS (UE)  Jazz  - RDBS  (USA)  Non assegnato','24'],['RDS (UE)  Country  - RDBS  (USA)  Non assegnato','25'],['RDS (UE)  Musica nazionale  - RDBS  (USA)  Non assegnato','26'],['RDS (UE)  Oldies  - RDBS  (USA)  Non assegnato','27'],['RDS (UE)  Folk  - RDBS  (USA)  Non assegnato','28'],['RDS (UE)  Documentari  - RDBS  (USA)  Meteo','29'],['RDS (UE)  Allarme (Test)  - RDBS  (USA)  Emergenza (test)','30'],['RDS (UE)  Allarme  - RDBS  (USA)  Emergenza','31']], { :include_blank=>false },{:class=>'form-control'}%>
+          </div>
+          <div class='form-group'>
+            <%= f.submit :class=>'btn btn-primary'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class='row'>
+      
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

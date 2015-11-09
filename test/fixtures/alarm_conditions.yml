@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  command: MyString
+  value: 1.5
+  comparator: MyString
+  alarm_id: 
+
+two:
+  command: MyString
+  value: 1.5
+  comparator: MyString
+  alarm_id: 
