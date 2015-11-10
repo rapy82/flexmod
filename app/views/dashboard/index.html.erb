@@ -1,35 +1,54 @@
-<div class="fx-panel fx-panel-primary">
-  <div class="fx-panel-body">
-    <div class="row">
-      <div class="col-sm-3 col-md-3">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">Frequency</div>
-          <div class="fx-panel-body">
-            <%= link_to "/fm_configuration" do %>
-              <%= @frequency %>
-            <% end %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+
+  <title></title>
+</head>
+
+<body>
+  <div class="fx-panel fx-panel-primary">
+    <div class="fx-panel-body">
+      <div class="row">
+        <div class="col-sm-3 col-md-3">
+          <div class="fx-panel fx-panel-default">
+            <div class="fx-panel-heading">
+              Forward Power
+            </div>
+
+            <div class="fx-panel-body">
+              <%= @forward_power %> W
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3 col-md-3">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">Forward Power</div>
-          <div class="fx-panel-body">
-            <%= @forward_power %>
+
+        <div class="col-sm-3 col-md-3">
+          <div class="fx-panel fx-panel-default">
+            <div class="fx-panel-heading">
+              Current Reflect Power
+            </div>
+
+            <div class="fx-panel-body">
+              <%= link_to "/fm_configuration" do %><%= @rf_power %><% end %> W
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3 col-md-3">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading"> Current Reflect Power</div>
-          <div class="fx-panel-body">
-            <%= link_to "/fm_configuration" do %>
-              <%= @rf_power %>
-            <% end %>
+
+        <div class="col-sm-3 col-md-3">
+          <div class="fx-panel fx-panel-default">
+            <div class="fx-panel-heading">
+              Frequency
+            </div>
+
+            <div class="fx-panel-body">
+              <%= link_to "/fm_configuration" do %><%= @frequency %><% end %>  Hz
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3 col-md-3">
+      </div><!--      <div class="col-sm-3 col-md-3">
         <div class="fx-panel fx-panel-default">
           <div class="fx-panel-heading">Normal Reflect Power</div>
           <div class="fx-panel-body">
@@ -40,106 +59,138 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-6">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">Source</div>
-          <div class="fx-panel-body">
-             <%= image_tag(@mode_configuration_image,  :class => "img-thumbnail") %>
+         -->
+
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="fx-panel fx-panel-default">
+            <div class="fx-panel-body">
+              <%= image_tag(@mode_configuration_image,  :class => "img-thumbnail") %>
+            </div>
           </div>
-        </div>
-      </div>
-	  <div class="col-sm-3 col-md-3">
+        </div><!-- <div class="col-sm-3 col-md-3">
         <div class="fx-panel fx-panel-default">
           <div class="fx-panel-heading">Mode</div>
-          <div class="fx-panel-body">
+              <div class="fx-panel-body">
             <%= @mode %> - <%= @mode_message %>
           </div>
         </div>
-      
+
         <div class="fx-panel fx-panel-default">
           <div class="fx-panel-heading">Source</div>
           <div class="fx-panel-body">
             <%= @source %> - <%= @source_message %>
           </div>
         </div>
-      </div>
-     
-      <div class="col-sm-3 col-md-3">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">Audio</div>
-          <div class="fx-panel-body">
-             <div class="progress">
-                <div id="left-audio" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                  <span class="sr-only"></span>
-                </div>
-              </div>
-              <div class="progress">
-                <div id="right-audio" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                  <span class="sr-only"></span>
-                </div>
-              </div>
-             <div id="audio"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      </div> -->
 
-<div class="fx-panel fx-panel-primary">
-  <div class="fx-panel-heading">Diagnostic</div>
-  <div class="fx-panel-body">
-    <div class="row">
-      <div class="col-sm-4 col-md-4">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">DC Rf Voltage</div>
-          <div class="fx-panel-body">
-            <%= @frequency %>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 col-md-4">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">Power Voltage</div>
-          <div class="fx-panel-body">
-            <%= @power_voltage %>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 col-md-4">
-        <div class="fx-panel fx-panel-default">
-          <div class="fx-panel-heading">Temperature</div>
-          <div class="fx-panel-body">
-            <%= @flexmod_temp %> °C
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="fx-panel fx-panel-primary">
-  <div class="fx-panel-heading">Alarms</div>
-  <div class="fx-panel-body">
-    <%= link_to alarms_path do %>
-      <div class="row">
-      <% @alarms.each do |alarm| %>
-        <div class="col-sm-12 col-md-12">
+        <div class="col-sm-6 col-md-6">
           <div class="row">
-            <div class="col-sm-12 col-md-8">
-              <% if !alarm.enabled %>
-              <div class="alert alert-warning"><%= alarm.name %></div>
-              <% elsif alarm.suspended %>
-              <div class="alert alert-danger"><%= alarm.name %></div>
-              <% else %>
-              <div class="alert alert-success"><%= alarm.name %></div>
-              <% end %>
+            <div class="fx-panel fx-panel-default">
+              <div class="fx-panel-heading">
+                Audio
+              </div>
+
+              <div class="fx-panel-body">
+                <div class="progress">
+                  <div id="left-audio" class="progress-bar progress-bar-warning" role=
+                  "progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100"
+                  style="width: 0%"></div>
+                </div>
+
+                <div class="progress">
+                  <div id="right-audio" class="progress-bar progress-bar-danger" role=
+                  "progressbar" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100"
+                  style="width: 0%"></div>
+                </div>
+
+                <div id="audio"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="fx-panel fx-panel-primary">
+              <div class="row">
+                <div class="col-sm-4 col-md-4">
+                  <div class="row">
+                    <div class="fx-panel fx-panel-default">
+                      <div class="fx-panel-heading">
+                        DC Rf Voltage
+                      </div>
+
+                      <div class="fx-panel-body">
+                        <%= @frequency %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="fx-panel fx-panel-default">
+                      <div class="fx-panel-heading">
+                        Power Voltage
+                      </div>
+
+                      <div class="fx-panel-body">
+                        <%= @power_voltage %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="fx-panel fx-panel-default">
+                      <div class="fx-panel-heading">
+                        Temperature
+                      </div>
+
+                      <div class="fx-panel-body">
+                        <%= @flexmod_temp %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
-    <% end %>
   </div>
 
+  <div class="fx-panel fx-panel-primary">
+    <div class="fx-panel-heading">
+      Alarms
+    </div>
+
+    <div class="fx-panel-body">
+      <%= link_to alarms_path do %>
+      <div class="row">
+        <% @alarms.each do |alarm| %>
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-8">
+              <% if !alarm.enabled %>
+
+              <div class="alert alert-warning">
+                <%= alarm.name %>
+              </div><% elsif alarm.suspended %>
+
+              <div class="alert alert-danger">
+                <%= alarm.name %>
+              </div><% else %>
+
+              <div class="alert alert-success">
+                <%= alarm.name %>
+              </div>
+			  
+			  <% end %>
+            </div>
+          </div>
+        </div>
+		<% end %>
+      </div>
+	  <% end %>
+    </div>
+  </div>
+</body>
+</html>
