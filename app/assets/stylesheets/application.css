@@ -15,9 +15,32 @@
 
 body {
     padding-top: 50px;
+	background:#ffffaa;
 }
+
+.row{
+	background:#ffffaa;
+}
+
+.fx-panel {
+    background-color: #ffffaa;
+	padding: 5px;
+}
+
+.fx-panel-body {
+	background-color: #ffffaa;
+    border: 1px;
+	border-color: #bbbbbb;
+}
+
+.fx-panel-heading {
+	background-color: #ffffaa;
+    font-family:"Verdana";
+	font-weight:bold;
+}
+
 .sub-header {
-    border-bottom: 1px solid #EEEEEE;
+    border-bottom: 10px solid #EEEEEE;
     padding-bottom: 10px;
 }
 .sidebar {
@@ -25,8 +48,7 @@ body {
 }
 @media (min-width: 768px) {
 .sidebar {
-    background-color: #F5F5F5;
-    border-right: 1px solid #EEEEEE;
+    /*border-right: 1px solid #000000;*/
     bottom: 0;
     display: block;
     left: 0;
@@ -52,16 +74,20 @@ body {
     color: #FFFFFF;
 }
 .main {
-    padding: 20px;
+    padding: 90px;
 }
+
+
 @media (min-width: 768px) {
-.main {
-    padding-left: 40px;
-    padding-right: 40px;
-}
+	.main {
+    	padding-left: 40px;
+    	padding-right: 40px;
+		border: 1px solid #555555;
+	}
 }
 .main .page-header {
     margin-top: 0;
+	
 }
 .placeholders {
     margin-bottom: 30px;
@@ -74,7 +100,7 @@ body {
     margin-bottom: 20px;
 }
 .placeholder img {
-    border-radius: 50%;
+    border-radius: 0%;
     display: inline-block;
 }
 

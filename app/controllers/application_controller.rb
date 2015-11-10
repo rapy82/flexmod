@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   #http_basic_authenticate_with name: "admin", password: "password"
+  skip_before_filter :verify_authenticity_token
   before_action  :authenticate , except: [:root_path]
-  before_action :check_flexmod_connection
+  #before_action :check_flexmod_connection
  
   protected
   
