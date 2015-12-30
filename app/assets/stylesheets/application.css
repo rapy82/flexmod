@@ -15,7 +15,12 @@
 
 body {
     padding-top: 50px;
-	background:#ffffaa;
+	background:#ffffaa !important;
+}
+
+a {
+    color: #000 !important;
+    text-decoration: underline !important;
 }
 
 .row{
@@ -103,4 +108,10 @@ body {
     border-radius: 0%;
     display: inline-block;
 }
+
+.big{
+	font-size: 25px;
+}
+
+
 

@@ -1,6 +1,6 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">Frequency Configuration</div>
-  <div class="panel-body">
+<div class="fx-panel fx-panel-primary">
+  <div class="fx-panel-heading">Frequency Configuration</div>
+  <div class="fx-panel-body">
     <div class='row'>
       <div class='col-md-6'>
         <%= form_for :fm_configuration, url: {:action => "save"}, html: {class:'form'} do |f| %>
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class='form-group'>
-            <%= f.submit :class=>'btn btn-primary',:confirm=>'Are you sure to save those values? If you proceed the power system will be restarted'%>
+            <%= f.submit :class=>'',:confirm=>'Are you sure to save those values? If you proceed the power system will be restarted'%>
           </div>
         <% end %>
       </div>

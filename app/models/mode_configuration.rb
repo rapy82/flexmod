@@ -35,7 +35,9 @@ class ModeConfiguration
 
   def self.set_current_mode_configuration(mode_id, mpx_level, input_gain, ext_mpx_gain, ext_sca_gain)
     
-    current_mode = ConfigurationKey.find_or_create_by_key 'current_mode', section: 'mode_configuration'
+    #current_mode = ConfigurationKey.find_or_create_by_key 'current_mode', section: 'mode_configuration'
+    
+    current_mode  = ConfigurationKey.find_by(key:'current_mode', section:'mode_configuration') || ConfigurationKey.create(key:'current_mode', section:'mode_configuration')
     
     current_mode.value = mode_id
     current_mode.save

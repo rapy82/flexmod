@@ -28,6 +28,6 @@ Flexmod::Application.configure do
   # number of complex assets.
   config.assets.debug = false
   
-  config.log_level = :info
+  config.log_level = :error
   
 end

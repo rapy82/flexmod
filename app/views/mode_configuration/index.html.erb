@@ -1,14 +1,14 @@
 <%= form_for :mode_configuration, url: {action: "save"}, html: {class:'form'} do |f| %>
-<div class="panel panel-primary">
-  <div class="panel-heading">
+<div class="fx-panel fx-panel-primary">
+  <div class="fx-panel-heading">
     Mode Configuration
   </div>
-  <div class="panel-body">
+  <div class="fx-panel-body">
     <div class='row'>
       <div class="col-sm-6 col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">Source</div>
-          <div class="panel-body">
+        <div class="fx-panel fx-panel-default">
+          <div class="fx-panel-heading">Source</div>
+          <div class="fx-panel-body">
              <img src="" id="selected-mode-image" class="img-thumbnail">
           </div>
         </div>
@@ -90,7 +90,7 @@
           <%= f.text_field :ext_sca_gain ,{:class=>'form-control'}%>
         </div>
         <div class='form-group'>
-          <%= f.submit :class=>'btn btn-primary'%>
+          <%= f.submit :class=>''%>
         </div>
       </div>  
     </div>

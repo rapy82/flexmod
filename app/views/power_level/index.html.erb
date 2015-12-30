@@ -1,24 +1,24 @@
 <%= form_tag("/power_level/save", :method => "post") do %>
-<div class="panel panel-primary">
-  <div class="panel-heading">
+<div class="fx-panel fx-panel-primary">
+  <div class="fx-panel-heading">
     Power
   </div>
-  <div class="panel-body">
+  <div class="fx-panel-body">
     <div class='row'>
       <div class='col-md-2'>
-        <div class="panel panel-default">
-          <div class="panel-heading">
+        <div class="fx-panel fx-panel-default">
+          <div class="fx-panel-heading">
             Normal Power Level
           </div>
-          <div class="panel-body">
+          <div class="fx-panel-body">
               <%= @high_level_power %> W
           </div>
         </div>
       </div>
       <div class='col-md-2'>
-        <div class="panel panel-default">
-          <div class="panel-heading">From</div>
-          <div class="panel-body">
+        <div class="fx-panel fx-panel-default">
+          <div class="fx-panel-heading">From</div>
+          <div class="fx-panel-body">
             <div class='form-inline'>
               <div class='form-group'>
                 <%= select_hour @from_hour , {:field_name => 'from_hour'}, {:class=>'form-control'} %>
@@ -31,11 +31,11 @@
         </div>
       </div>
       <div class='col-md-2'>
-        <div class="panel panel-default">
-          <div class="panel-heading">
+        <div class="fx-panel fx-panel-default">
+          <div class="fx-panel-heading">
             To
           </div>
-          <div class="panel-body">
+          <div class="fx-panel-body">
             <div class='form-inline'>
               <div class='form-group'>
                 <%= select_hour @to_hour ,{:field_name => 'to_hour'}, {:class=>'form-control'} %>
@@ -49,11 +49,11 @@
       </div>
       
       <div class='col-md-3'>
-        <div class="panel panel-default">
-          <div class="panel-heading">
+        <div class="fx-panel fx-panel-default">
+          <div class="fx-panel-heading">
             Power set to:
           </div>
-          <div class="panel-body">
+          <div class="fx-panel-body">
             <div class='form-group'>
             <div class='input-group'>
               <%= text_field_tag :power_percent,  @power_percent,{:class=>'form-control'} %>
